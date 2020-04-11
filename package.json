@@ -6,11 +6,11 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "prestart": "node node_modules/mini-app-sdk/bundle.js",
+    "postinstall": "node node_modules/mini-app-sdk/patch.js"
   },
   "dependencies": {
-    "react": "16.8.1",
-    "react-native": "0.61.0",
     "apollo-boost": "^0.3.1",
     "apollo-cache-inmemory": "^1.5.1",
     "apollo-client": "^2.5.1",
@@ -19,8 +19,16 @@
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
     "lodash": "^4.17.13",
+    "mini-app-sdk": "^0.0.1-2.0.61.x",
     "prop-types": "^15.7.2",
+    "react": "16.8.1",
     "react-apollo": "^2.5.2",
+    "react-native": "0.61.0",
+    "react-native-device-info": "^5.5.4",
+    "react-native-fs": "^2.16.6",
+    "react-native-svg": "^12.1.0",
+    "react-native-vector-icons": "^6.6.0",
+    "react-native-zip-archive": "^5.0.2",
     "react-navigation": "^2.2.0",
     "styled-components": "^4.2.1"
   },
