@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.migrate">
+  package="com.animejisho">
 
     <uses-permission android:name="android.permission.INTERNET" />
 

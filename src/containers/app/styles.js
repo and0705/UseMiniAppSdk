@@ -5,11 +5,11 @@ import Text from '../../widget/Text';
 
 export const IconWrapper = styled.View`
   border-Color: #004f4f;
-  border-Width: 3;
+  border-Width: 0;
   background-Color: #ff8f1f;
-  paddingHorizontal: 20;
+  paddingHorizontal: 10;
+  paddingVertical: 10;
   border-Radius: 40;
-  paddingVertical: 20;
 `;
 
 export const IconView = styled(Icon)`

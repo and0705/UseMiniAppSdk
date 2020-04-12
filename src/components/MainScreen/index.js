@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RefreshControl } from 'react-native';
+import {RefreshControl} from 'react-native';
+import MiniAppList from './MiniAppList';
 
 import AnimeSlider from './AnimeSlider';
 import {
@@ -25,31 +26,45 @@ const MainScreen = ({
     allTimePopular.refetch();
   };
 
-  const refershing = popularAnime.networkStatus === 4
-    || highlyAnticipated.networkStatus === 4
-    || highestRated.networkStatus === 4
-    || allTimePopular.networkStatus === 4;
+  const refershing =
+    popularAnime.networkStatus === 4 ||
+    highlyAnticipated.networkStatus === 4 ||
+    highestRated.networkStatus === 4 ||
+    allTimePopular.networkStatus === 4;
 
-  const backgroundImageStyleing = { opacity: 0.1 };
+  const backgroundImageStyleing = {opacity: 0.1};
 
   return (
     <MainScreenView
       refreshControl={
-        <RefreshControl
-          refreshing={refershing}
-          onRefresh={refetchDataList}
-        />
+        <RefreshControl refreshing={refershing} onRefresh={refetchDataList} />
       }>
-      <BackgroundImage imageStyle={backgroundImageStyleing} source={require('../../../assets/images/logo.png')} >
-        <LabelText> Anime Jisho </LabelText>
-        <DiscoverLabel onPress={() => navigation.navigate('PopularAnime')}> Popular Anime<ClickableLabel> {'>>>'} </ClickableLabel>  </DiscoverLabel>
+      <BackgroundImage
+        imageStyle={backgroundImageStyleing}
+        source={require('../../../assets/images/logo.png')}>
+        <LabelText>Anime Jisho</LabelText>
+        <DiscoverLabel onPress={() => navigation.navigate('PopularAnime')}>
+          {' '}
+          Popular Anime<ClickableLabel> &raquo; </ClickableLabel>{' '}
+        </DiscoverLabel>
         <AnimeSlider AnimeObj={popularAnime} navigation={navigation} />
-        <DiscoverLabel onPress={() => navigation.navigate('HighlyAnticipated')}> Highly Anticipated Anime<ClickableLabel> {'>>>'} </ClickableLabel></DiscoverLabel>
+        <DiscoverLabel onPress={() => navigation.navigate('HighlyAnticipated')}>
+          {' '}
+          Highly Anticipated Anime<ClickableLabel> &raquo; </ClickableLabel>
+        </DiscoverLabel>
         <AnimeSlider AnimeObj={highlyAnticipated} navigation={navigation} />
-        <DiscoverLabel onPress={() => navigation.navigate('HighestRated')}> Highest Rated Anime<ClickableLabel> {'>>>'} </ClickableLabel></DiscoverLabel>
+        <DiscoverLabel onPress={() => navigation.navigate('HighestRated')}>
+          {' '}
+          Highest Rated Anime<ClickableLabel> &raquo; </ClickableLabel>
+        </DiscoverLabel>
         <AnimeSlider AnimeObj={highestRated} navigation={navigation} />
-        <DiscoverLabel onPress={() => navigation.navigate('AllTimePopular')}> All Time Popular<ClickableLabel> {'>>>'} </ClickableLabel></DiscoverLabel>
+        <DiscoverLabel onPress={() => navigation.navigate('AllTimePopular')}>
+          {' '}
+          All Time Popular<ClickableLabel> &raquo; </ClickableLabel>
+        </DiscoverLabel>
         <AnimeSlider AnimeObj={allTimePopular} navigation={navigation} />
+
+        <MiniAppList />
       </BackgroundImage>
     </MainScreenView>
   );
