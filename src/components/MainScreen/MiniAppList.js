@@ -7,7 +7,7 @@ const MiniAppList = () => {
     <TouchableOpacity
       style={styles.container}
       onPress={() => miniAppSDK.openMenu()}>
-      <Text>Play Games</Text>
+      <Text style={styles.text}>Play Games</Text>
       <Image source={require('../../../assets/images/game.png')} />
     </TouchableOpacity>
   );
@@ -18,6 +18,9 @@ const styles = StyleSheet.create({
     marginTop: 20,
     borderTopWidth: 1,
   },
+  text: {
+    paddingTop: 2,
+  }
 });
 
 export default MiniAppList;
