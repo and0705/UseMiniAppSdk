@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
   text: {
     paddingTop: 2,
-  }
+  },
 });
 
 export default MiniAppList;
