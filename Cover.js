@@ -4,7 +4,6 @@ import miniAppSDK from 'mini-app-sdk';
 import App from './App';
 
 import {CLIENT_KEY, CLIENT_SECRET} from './constants/Client';
-// import {MiniAppId} from './constants/MiniAppId';
 
 import packageJSON from './package.json';
 
@@ -20,9 +19,9 @@ export default () => {
           reactBundleVersion: packageJSON.version,
           isDevelopment: true,
         });
-        // await miniAppSDK.install(MiniAppId);
+        // await miniAppSDK.seMaximumAppInBackground(1);
       } catch (error) {
-        console.error(error);
+        console.warn('init error: ' + error);
       } finally {
         setInitializing(false);
       }

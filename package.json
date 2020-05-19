@@ -1,6 +1,6 @@
 {
   "name": "AnimeJisho",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -23,6 +23,7 @@
     "prop-types": "^15.7.2",
     "react": "16.8.1",
     "react-apollo": "^2.5.2",
+    "react-devtools": "^3",
     "react-native": "0.61.0",
     "react-native-device-info": "^5.5.4",
     "react-native-fs": "^2.16.6",
